@@ -13,3 +13,4 @@
  * details.
  */
 --%>
+<b>Hi from bottom-ext.jsp</b>
