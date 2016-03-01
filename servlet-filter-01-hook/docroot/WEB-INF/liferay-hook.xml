@@ -2,4 +2,18 @@
 <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
 
 <hook>
+	<servlet-filter>
+		<servlet-filter-name>MyFilter</servlet-filter-name>
+		<servlet-filter-impl>test.MyFilter</servlet-filter-impl>
+		<init-param>
+			<param-name>param1</param-name>
+			<param-value>Hello</param-value>
+		</init-param>
+	</servlet-filter>
+
+	<servlet-filter-mapping>
+		<servlet-filter-name>MyFilter</servlet-filter-name>
+		<before-filter>Dynamic CSS Filter</before-filter>
+		<url-pattern>/*</url-pattern>
+	</servlet-filter-mapping>
 </hook>
