@@ -12,14 +12,19 @@ import org.apache.log4j.Logger;
 
 import com.liferay.portal.kernel.struts.BaseStrutsPortletAction;
 import com.liferay.portal.kernel.struts.StrutsPortletAction;
+import com.liferay.portal.kernel.util.ParamUtil;
 
 public class TestStrutsActionHook extends BaseStrutsPortletAction {
 
 	@Override
 	public void processAction(StrutsPortletAction originalStrutsPortletAction, PortletConfig portletConfig,
-			ActionRequest actionRequest, ActionResponse actionResponse) throws Exception {
+			ActionRequest request, ActionResponse actionResponse) throws Exception {
 		_log.error("processAction");
-		originalStrutsPortletAction.processAction(originalStrutsPortletAction, portletConfig, actionRequest, actionResponse);
+		String login = ParamUtil.getString(request, "login");
+		String password = request.getParameter("password");
+		boolean rememberMe = ParamUtil.getBoolean(request, "rememberMe");
+		_log.error(login + "," + password + "," + rememberMe);
+		originalStrutsPortletAction.processAction(originalStrutsPortletAction, portletConfig, request, actionResponse);
 	}
 
 	@Override
