@@ -2,4 +2,8 @@
 <!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
 
 <hook>
+    <service>
+        <service-type>com.liferay.portlet.journal.service.JournalArticleService</service-type>
+        <service-impl>test.JournalArticleServiceImpl</service-impl>
+    </service>
 </hook>
